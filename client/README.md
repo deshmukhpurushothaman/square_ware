@@ -1,3 +1,10 @@
+# How to start the server
+
+npm run dev
+
+The above command will start both the node and react server.
+That command should be run outside the client folder.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
