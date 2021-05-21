@@ -1,8 +1,7 @@
 const express = require("express");
 const {
-   s3createPost
+   profile
 } = require("../controllers/post");
-const { requireSignin } = require("../controllers/auth");
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
@@ -11,7 +10,7 @@ const router = express.Router();
 
 
 
-router.post("/s3/:userId",  upload.single('image'), s3createPost);
+router.post("/profile/:userId",  upload.single('image'), profile);
 
 
 

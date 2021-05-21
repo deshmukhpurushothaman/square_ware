@@ -3,9 +3,6 @@ const { signup, signin, signout } = require('../controllers/auth');
 const { userSignupValidator, userSigninValidator, } = require('../validator');
 
 
-const { passwordResetValidator } = require('../validator/index')
-
-
 //Initializing Router
 const router = express.Router();
 

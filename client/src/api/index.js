@@ -52,6 +52,24 @@ export const signout = () => {
     .catch(err => console.log(err))
 }
 
+//To create or update profile of the user
+export const create = (userId, token, post) => {
+    return fetch(`${process.env.REACT_APP_API_URL}/profile/${userId}`, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            //"Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: post
+    })
+    .then(response => {
+        //console.log(response)
+        return response.json();
+    })
+    .catch(err => console.log(err));
+}
+
 
 //JWT setting
 export const authenticate = (jwt, next) => {
@@ -91,20 +109,3 @@ export const getUser = (userId, token) => {
     })
 }
 
-//To create or update profile of the user
-export const create = (userId, token, post) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/s3/${userId}`, {
-        method: "POST",
-        headers: {
-            Accept: "application/json",
-            //"Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
-        },
-        body: post
-    })
-    .then(response => {
-        //console.log(response)
-        return response.json();
-    })
-    .catch(err => console.log(err));
-}

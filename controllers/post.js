@@ -26,7 +26,7 @@ const bucketName = process.env.AWS_BUCKET_NAME;
     })
 
 
-exports.s3createPost = async(req,res) => {
+exports.profile = async(req,res) => {
     console.log("Save Image in S3")
     const file = req.file;
     console.log(file)
